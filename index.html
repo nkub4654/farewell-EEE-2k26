@@ -1,316 +1,144 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farewell Seniors | Lourdes Matha</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS (via CDN) -->
+    <title>Adieu - EEE 2k26</title>
+    <!-- We use Tailwind CSS via CDN for the beautiful styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Warm Amber/Orange Palette
-                        theme: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            800: '#92400e',
-                            900: '#78350f',
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['"Playfair Display"', 'serif'],
-                        body: ['Lato', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
     <style>
-        /* Scroll Animations */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        /* Smooth fade-in animation for when the page loads */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glass Panel Utilities */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
         }
     </style>
 </head>
-<body class="font-body text-gray-800 antialiased overflow-x-hidden relative">
+<body class="min-h-screen bg-slate-950 text-slate-200 font-sans overflow-x-hidden selection:bg-amber-500 selection:text-slate-900">
 
-    <!-- BACKGROUND SLIDESHOW -->
-    <div class="fixed inset-0 -z-20 bg-black">
-        <!-- Image 1: Golden Hour -->
-        <div id="bg-img-1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] opacity-100 scale-110 blur-md" 
-             style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop');"></div>
-        <!-- Image 2: Warm Sparklers/Night -->
-        <div id="bg-img-2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] opacity-0 scale-110 blur-md" 
-             style="background-image: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop');"></div>
-        <!-- Image 3: Sunset Friends -->
-        <div id="bg-img-3" class="absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] opacity-0 scale-110 blur-md" 
-             style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop');"></div>
+    <!-- Dynamic Background Elements (Glowing Orbs) -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-20%] w-96 h-96 bg-amber-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[-10%] right-[-20%] w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
     </div>
 
-    <!-- WARM COLOR OVERLAY (Ensures text readability and forces a warm tint over all pictures) -->
-    <div class="fixed inset-0 -z-10 bg-gradient-to-br from-theme-900/70 via-theme-800/50 to-orange-900/60 mix-blend-multiply"></div>
-
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center">
-        <div class="relative z-10 text-center px-4 reveal-up active">
-            <span class="block text-theme-100 uppercase tracking-[0.3em] text-sm md:text-base font-semibold mb-4 drop-shadow-lg leading-loose">
-                Farewell to the Class of <br> 2022 - 2026
-            </span>
-            <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-white mb-8 drop-shadow-2xl leading-tight">
-                Dear <br><span class="text-theme-500 italic">Seniors</span>
+    <div class="relative z-10 flex flex-col items-center w-full max-w-md mx-auto">
+        
+        <!-- Hero Section -->
+        <header class="w-full min-h-[85vh] flex flex-col items-center justify-center px-6 text-center animate-fade-in">
+            <div class="w-16 h-1 bg-amber-500 mb-8 rounded-full"></div>
+            <h1 class="text-5xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600 drop-shadow-sm">
+                Adieu.
             </h1>
-            <p class="text-white text-lg md:text-2xl max-w-2xl mx-auto mb-12 font-light drop-shadow-md">
-                Thank you for the memories, the guidance, and the endless inspiration.
+            <h2 class="text-xl text-slate-400 font-light mb-8 tracking-widest uppercase">
+                The Legacy of EEE
+            </h2>
+            <p class="text-slate-300 leading-relaxed font-light mb-12">
+                Marking the end of an era, the late-night circuits, and the unbreakable bonds. Here is to the journeys completed and the chapters yet to be written.
             </p>
-            <a href="#video-section" class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-theme-500 text-white hover:bg-theme-600 hover:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.6)]">
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-            </a>
-        </div>
-    </header>
+            
+            <!-- Scroll Indicator -->
+            <div class="animate-bounce mt-8 opacity-50">
+                <svg class="w-6 h-6 text-amber-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </header>
 
-    <!-- Video Section -->
-    <section id="video-section" class="py-24 px-6 relative">
-        <div class="max-w-5xl mx-auto reveal-up">
-            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem]">
-                <div class="text-center mb-10">
-                    <h2 class="font-heading text-4xl md:text-5xl text-theme-900 mb-4">A Walk Down Memory Lane</h2>
-                    <p class="text-theme-800 text-lg">We've compiled some of our favorite moments together into this short montage.</p>
-                </div>
-                
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-black border-4 border-theme-100">
-                    <!-- HTML5 Video element -->
+        <!-- Highlight Video Section -->
+        <section class="w-full px-4 py-12 flex flex-col items-center">
+            <h3 class="text-xs font-bold tracking-[0.2em] text-amber-500 uppercase mb-8">
+                The Highlight Reel
+            </h3>
+            
+            <div class="w-full relative group rounded-xl p-1 bg-gradient-to-b from-slate-800 to-slate-900 shadow-2xl shadow-amber-900/20">
+                <div class="absolute inset-0 bg-amber-500/20 blur-xl rounded-full opacity-50 transition-opacity duration-500"></div>
+                <div class="relative w-full aspect-[9/16] md:aspect-video bg-black rounded-lg overflow-hidden border border-slate-700/50">
                     <video 
                         controls 
-                        playsinline 
-                        class="w-full h-auto object-cover aspect-video"
-                        poster="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo1.jpg?raw=true">
-                        <source src="https://github.com/nkub4654/farewell-EEE-2k26/raw/refs/heads/main/videos/video01.mkv" type="video/mp4">
+                        controlsList="nodownload"
+                        class="w-full h-full object-cover"
+                        poster="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo0.jpg?raw=true"
+                    >
+                        <!-- Using your provided MKV link -->
+                        <source src="https://github.com/nkub4654/farewell-EEE-2k26/raw/refs/heads/main/videos/video01.mkv" type="video/webm" />
+                        <source src="https://github.com/nkub4654/farewell-EEE-2k26/raw/refs/heads/main/videos/video01.mkv" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quote Section -->
-    <section class="py-12 px-6 relative flex items-center justify-center">
-        <div class="max-w-4xl mx-auto relative z-10 reveal-up w-full">
-            <div class="glass-panel p-10 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden">
-                <!-- Decorative subtle blobs inside the glass -->
-                <div class="absolute -top-20 -left-20 w-64 h-64 bg-theme-500/20 rounded-full mix-blend-multiply blur-2xl"></div>
-                <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-orange-400/20 rounded-full mix-blend-multiply blur-2xl"></div>
+        <!-- Scattered Memories Section (Non-Grid) -->
+        <section class="w-full px-4 py-20 flex flex-col items-center overflow-hidden">
+            <h3 class="text-xs font-bold tracking-[0.2em] text-amber-500 uppercase mb-16">
+                Captured Fragments
+            </h3>
 
-                <svg class="w-12 h-12 text-theme-600 mx-auto mb-8 opacity-80 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                
-                <p class="font-heading text-2xl md:text-4xl text-theme-900 leading-relaxed mb-10 italic relative z-10">
-                    "It is very easy to erase the footprints on the paths we have traveled, but... it is very difficult to erase the memories engraved in the heart."
-                </p>
-                
-                <div class="h-px w-32 bg-theme-600/30 mx-auto mb-8 relative z-10"></div>
-                
-                <p class="font-bold text-theme-800 tracking-wider uppercase text-sm md:text-base relative z-10">
-                    With lots of love from your juniors
-                </p>
-            </div>
-        </div>
-    </section>
+            <!-- JavaScript will inject the photos into this container -->
+            <div id="scrapbook-container" class="w-full flex flex-col pb-20 relative"></div>
+        </section>
 
-    <!-- Photo Gallery Section -->
-    <section class="py-24 px-6 relative">
-        <div class="max-w-6xl mx-auto reveal-up">
-            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem]">
-                <div class="text-center mb-12">
-                    <h2 class="font-heading text-4xl md:text-5xl text-theme-900 mb-4">Golden Moments</h2>
-                    <p class="text-theme-800 text-lg">Snapshots of laughter and unforgettable events.</p>
-                </div>
+        <!-- Footer -->
+        <footer class="w-full py-16 px-6 text-center border-t border-slate-800/50">
+            <h4 class="text-2xl font-serif italic text-amber-400 mb-4">
+                Until our paths cross again.
+            </h4>
+            <p class="text-xs text-slate-500 tracking-widest uppercase">
+                Class of 2026 • Electrical & Electronics
+            </p>
+        </footer>
 
-                <!-- 3 Column Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Gallery Item 1 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo1.jpg?raw=true" alt="College Days" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo2.jpg?raw=true" alt="Tech Fest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo3.jpg?raw=true" alt="Sports Meet" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo4.jpg?raw=true" alt="Hostel Memories" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo5.jpg?raw=true" alt="Canteen Chills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo6.jpg?raw=true" alt="Graduation Smiles" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"> 
-                   </div>
-
-                    <!-- Gallery Item 7 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg aspect-square border border-theme-100/50 bg-gray-100">
-                        <img src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo7.jpg?raw=true" alt="Canteen Chills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass-panel mx-6 mb-6 rounded-3xl py-10 text-center relative z-10">
-        <p class="text-lg flex items-center justify-center gap-2 text-theme-900 font-medium">
-            Made with <svg class="w-6 h-6 text-red-500 fill-current animate-pulse" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> for our wonderful seniors.
-        </p>
-        <p class="text-theme-600 text-sm mt-2 font-bold tracking-widest uppercase">Lourdes Matha College</p>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300">
-        <!-- Close Button -->
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white hover:rotate-90 transition-all duration-300 p-2" aria-label="Close Lightbox">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        
-        <!-- Enlarged Image -->
-        <div class="relative max-w-5xl max-h-[80vh] px-4 w-full flex justify-center">
-            <img id="lightbox-img" src="" alt="Enlarged gallery photo" class="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl ring-1 ring-white/20">
-        </div>
     </div>
 
-    <!-- JavaScript Logic -->
+    <!-- Script to automatically generate the scattered photos -->
     <script>
-        // 1. Background Slideshow Logic
-        const totalBgs = 3;
-        let currentBg = 1;
+        const container = document.getElementById('scrapbook-container');
         
-        setInterval(() => {
-            // Fade out current
-            document.getElementById(`bg-img-${currentBg}`).classList.remove('opacity-100');
-            document.getElementById(`bg-img-${currentBg}`).classList.add('opacity-0');
-            
-            // Calculate next
-            currentBg = currentBg >= totalBgs ? 1 : currentBg + 1;
-            
-            // Fade in next
-            document.getElementById(`bg-img-${currentBg}`).classList.remove('opacity-0');
-            document.getElementById(`bg-img-${currentBg}`).classList.add('opacity-100');
-        }, 6000); // Changes image every 6 seconds
+        // Change this number to however many photos you have in your GitHub repo!
+        const totalPhotos = 9; 
 
-        // 2. Intersection Observer for Scroll Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
+        for(let i = 1; i <= totalPhotos; i++) {
+            // Create organic, random scattering effects
+            const rotation = (Math.random() * 12 - 6).toFixed(1); // Random rotation between -6 and 6 degrees
+            const align = i % 2 === 0 ? 'flex-end' : 'flex-start'; // Zig-zag alignment
+            const marginX = Math.random() * 15 + 10; // Random side margin
+            const marginTop = i === 1 ? '10px' : '-60px'; // Negative margin creates the overlapping stack effect
+            const zIndex = i; // Ensure photos stack correctly
 
-        const scrollObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+            // Create the polaroid wrapper
+            const photoDiv = document.createElement('div');
+            photoDiv.className = "relative bg-slate-100 p-2 pb-10 rounded-sm shadow-2xl border border-slate-300 transition-transform duration-300 active:scale-105";
+            photoDiv.style.cssText = `
+                width: 75%;
+                max-width: 280px;
+                align-self: ${align};
+                margin-${align === 'flex-start' ? 'left' : 'right'}: ${marginX}px;
+                margin-top: ${marginTop};
+                transform: rotate(${rotation}deg);
+                z-index: ${zIndex};
+            `;
 
-        document.querySelectorAll('.reveal-up').forEach(element => {
-            scrollObserver.observe(element);
-        });
+            // Insert the image and the little "tape" at the top
+            photoDiv.innerHTML = `
+                <div class="w-full aspect-square bg-slate-200 overflow-hidden relative">
+                    <img 
+                        src="https://github.com/nkub4654/farewell-EEE-2k26/blob/main/Images/photo${i}.jpg?raw=true" 
+                        alt="Memory ${i}" 
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'w-full h-full flex items-center justify-center text-slate-500 text-sm font-semibold\\'>Awaiting Image ${i}</div>';"
+                    />
+                </div>
+                <!-- Semi-transparent piece of tape -->
+                <div class="absolute top-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-4 bg-white/40 backdrop-blur-md rotate-2 shadow-sm"></div>
+            `;
 
-        // 3. Custom Lightbox Modal Logic
-        const modal = document.getElementById('lightbox-modal');
-        const modalImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('lightbox-close');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        // Open Modal
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                
-                // Set modal content
-                modalImg.src = img.src;
-                modalImg.alt = img.alt;
-                
-                // Show modal with fade-in
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                
-                // Small delay to allow display:flex to apply before changing opacity
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                }, 10);
-            });
-        });
-
-        // Close Modal Function
-        function closeLightbox() {
-            modal.classList.add('opacity-0');
-            document.body.style.overflow = ''; // Restore scrolling
-            
-            // Wait for transition to finish before hiding
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                modalImg.src = ''; // Clear source
-            }, 300);
+            container.appendChild(photoDiv);
         }
-
-        // Close Event Listeners
-        closeBtn.addEventListener('click', closeLightbox);
-        
-        // Close on background click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeLightbox();
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeLightbox();
-            }
-        });
     </script>
 </body>
 </html>
